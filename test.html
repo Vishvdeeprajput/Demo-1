@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UI/UX Course Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #4F46E5;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #4F46E5;
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+    }
+    input, textarea, button {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #4F46E5;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    .info {
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>UI/UX Design Course</h1>
+    <p>Free Registration | 1 Month | Weekend Classes | Certification Included</p>
+  </header>
+
+  <div class="container">
+    <div class="info">
+      <h2>Course Details:</h2>
+      <ul>
+        <li>⏰ <strong>Duration:</strong> 1 Month</li>
+        <li>📅 <strong>Classes:</strong> Every Saturday & Sunday (2 Hours)</li>
+        <li>📝 <strong>Quizzes:</strong> 2 Online Quizzes</li>
+        <li>📜 <strong>Certificate:</strong> Awarded on Passing Quizzes</li>
+        <li>💵 <strong>Registration:</strong> Free</li>
+      </ul>
+    </div>
+
+    <form id="registrationForm">
+      <h2>Register Now</h2>
+      <label for="name">Full Name</label>
+      <input type="text" id="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" required>
+
+      <label for="message">Why are you interested in UI/UX?</label>
+      <textarea id="message" rows="3"></textarea>
+
+      <button type="submit">Submit Registration</button>
+    </form>
+
+    <div id="response" style="margin-top:1rem; color: green;"></div>
+  </div>
+
+  <script>
+    document.getElementById('registrationForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      document.getElementById('response').innerText = `Thank you, ${name}! Your registration is received. We'll contact you at ${email}.`;
+      this.reset();
+    });
+  </script>
+</body>
+</html>
